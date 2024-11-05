@@ -1,0 +1,46 @@
+---
+import closedBurgder from "../../../public/assets/navbar/closed-burger.png";
+---
+
+<img
+  src={closedBurgder.src}
+  alt="menu icon"
+  width="50"
+  height="55"
+  id="menu-icon"
+  class="cursor-pointer fixed top-3 right-3 z-10"
+/>
+
+<div
+  id="menu"
+  class="translate-x-full fixed top-0 right-0 w-4/5 h-full p-4 transition-transform duration-300 ease-in-out transform bg-pink/30 backdrop-blur-md rounded-xl border border-white/20 shadow-lg text-black/80"
+>
+  <nav class="mt-16">
+    <ul class="space-y-4">
+      <li><a href="#" class="text-blue-600 hover:underline">Home</a></li>
+      <li><a href="#" class="text-blue-600 hover:underline">About</a></li>
+      <li><a href="#" class="text-blue-600 hover:underline">Services</a></li>
+      <li><a href="#" class="text-blue-600 hover:underline">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  let menuState = false;
+  const menu = document.getElementById("menu");
+  const burgerEl = document.getElementById(
+    "menu-icon"
+  ) as HTMLImageElement | null;
+
+  burgerEl?.addEventListener("click", () => {
+    menuState = !menuState;
+
+    if (menuState) {
+      burgerEl.src = "/assets/navbar/open-burger.png";
+      menu?.classList.remove("translate-x-full");
+    } else {
+      burgerEl.src = "/assets/navbar/closed-burger.png";
+      menu?.classList.add("translate-x-full");
+    }
+  });
+</script>

@@ -1,0 +1,23 @@
+---
+import ControlBtnsGimmick from "./ControlBtnsGimmick.astro";
+import Title from "./Title.astro";
+
+type Props = {
+  titleText: string;
+  sectionNumber: string;
+};
+
+const { titleText, sectionNumber } = Astro.props;
+---
+
+<!-- number card container -->
+<div
+  class="bg-light-bg container mx-auto relative shadow-realistic-solid border-2 border-black mt-20 w-fit text-6xl font-bold"
+>
+  <ControlBtnsGimmick className="" />
+  <p class="bg-black h-1 w-full mt-2 mb-2"></p>
+  <p class="px-3 py-2 text-center tracking-widest">{sectionNumber}</p>
+</div>
+<div>
+  <Title titleText={titleText} />
+</div>

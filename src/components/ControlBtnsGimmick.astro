@@ -1,0 +1,28 @@
+---
+type Props = {
+  className: string;
+};
+
+const { className } = Astro.props;
+---
+
+<!-- Container for the buttons -->
+<div class={`flex space-x-2 ${className}`}>
+  <!-- Minimize button -->
+  <div class="w-8 h-8 flex items-end justify-center rounded">
+    <div class="w-6 h-1 bg-black"></div>
+  </div>
+  <!-- Maximize/Restore button -->
+  <div class="w-8 h-8 flex items-end justify-center rounded">
+    <div class="w-6 h-6 border-2 border-black"></div>
+  </div>
+  <!-- Custom Close Button -->
+  <div
+    class="w-8 h-8 flex items-center justify-center rounded cursor-pointer hover:bg-gray-300 relative top-1"
+  >
+    <!-- Line 1 -->
+    <div class="absolute w-7 h-[2.5px] bg-black transform rotate-45"></div>
+    <!-- Line 2 -->
+    <div class="absolute w-7 h-[2.5px] bg-black transform -rotate-45"></div>
+  </div>
+</div>

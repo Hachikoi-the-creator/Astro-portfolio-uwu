@@ -1,0 +1,28 @@
+---
+import MobileNavbar from "../components/navbar/MobileNavbar.astro";
+import Layout from "../layouts/Layout.astro";
+// import ControlBtnsGimmick from "../components/ControlBtnsGimmick.astro";
+import SectionDivision from "../components/SectionDivisions.astro";
+import Title from "~/components/Title.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="px-8">
+    <Title titleText="Adan Moreno" className="mt-8" />
+    <p class="text-center my-4">(Ruby-dev)</p>
+
+    <p class="text-xl md:text-2xl lg:text-3xl font-bold text-center">
+      Frontend Web Dev
+    </p>
+
+    <p class="text-center px-8 my-10">
+      I build highly perfomant applications in nextjs, while keeping SEO & UX
+      into account, always open to new ways of improving my code & myself.
+    </p>
+    <SectionDivision titleText="About me" sectionNumber="01" />
+
+    <div class="block md:hidden">
+      <MobileNavbar />
+    </div>
+  </main>
+</Layout>
