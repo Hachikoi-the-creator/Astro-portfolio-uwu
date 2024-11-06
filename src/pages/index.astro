@@ -4,6 +4,9 @@ import Layout from "../layouts/Layout.astro";
 // import ControlBtnsGimmick from "../components/ControlBtnsGimmick.astro";
 import SectionDivision from "../components/SectionDivisions.astro";
 import Title from "~/components/Title.astro";
+// import usbImage from "~/assets/usb.png";
+import usbSvg from "~/assets/svgs/usb.svg";
+import mediaPlayer from "~/assets/media-player.png";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,7 +22,13 @@ import Title from "~/components/Title.astro";
       I build highly perfomant applications in nextjs, while keeping SEO & UX
       into account, always open to new ways of improving my code & myself.
     </p>
-    <SectionDivision titleText="About me" sectionNumber="01" />
+    <SectionDivision
+      titleText="About me"
+      sectionNumber="01"
+      firstIcon="chevronRight"
+      secondIcon="dottedLine"
+      localImage={usbSvg}
+    />
 
     <div class="block md:hidden">
       <MobileNavbar />

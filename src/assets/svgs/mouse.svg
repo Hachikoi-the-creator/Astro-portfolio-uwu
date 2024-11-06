@@ -1,0 +1,12 @@
+<!-- <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> -->
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="800px" height="800px" fill="#fcf6e8" stroke="#fcf6e8" transform="matrix(-1, 0, 0, -1, 0, 0)rotate(90)">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <circle style="fill:#fcf6e8;" cx="256" cy="256" r="256"/> <path style="fill:#dac2cf;" d="M264,72c61.6,0,112,50.4,112,112v136c0,61.6-50.4,112-112,112h-16c-61.6,0-112-50.4-112-112V184 c0-61.6,50.4-112,112-112H264z"/> <g> <path style="fill:#dac2cf;" d="M264,72h-16c61.6,0,112,50.4,112,112v136c0,61.6-50.4,112-112,112h16c61.6,0,112-50.4,112-112V184 C376,122.4,325.6,72,264,72z"/> <path style="fill:#dac2cf;" d="M136,184v24h240v-24c0-61.6-50.4-112-112-112h-16C186.4,72,136,122.4,136,184z"/> </g> <g> <path style="fill:#ab95a1;" d="M264,72h-16c61.6,0,112,50.4,112,112v24h16v-24C376,122.4,325.6,72,264,72z"/> <rect x="252" y="72" style="fill:#ab95a1;" width="8" height="128"/> <path style="fill:#ab95a1;" d="M268,156c0,4.4-3.6,8-8,8h-8c-4.4,0-8-3.6-8-8v-36c0-4.4,3.6-8,8-8h8c4.4,0,8,3.6,8,8V156z"/> </g> <g> <rect x="248" y="120" style="fill:#efc5b8;" width="16" height="4"/> <rect x="248" y="128" style="fill:#efc5b8;" width="16" height="4"/> <rect x="248" y="136" style="fill:#efc5b8;" width="16" height="4"/> <rect x="248" y="144" style="fill:#efc5b8;" width="16" height="4"/> <rect x="248" y="152" style="fill:#efc5b8;" width="16" height="4"/> </g> <g> <path style="fill:#dac2cf;" d="M264,64h-16c-2.2,0-4,1.8-4,4v4h4h16h4v-4C268,65.8,266.2,64,264,64z"/> <path style="fill:#dac2cf;" d="M278.844,1.072c-1.58,3.928-4.592,8.288-7.976,13.116C262.46,26.196,252,41.14,252,64h8 c0-20.34,9.66-34.136,17.42-45.228c4.18-5.976,7.924-11.352,9.616-16.836C284.32,1.608,281.584,1.312,278.844,1.072z"/> </g> <path style="fill:#dac2cf;" d="M252.108,60C252.04,61.308,252,62.636,252,64h8c0-1.392,0.148-2.672,0.236-4H252.108z"/> </g>
+
+</svg>

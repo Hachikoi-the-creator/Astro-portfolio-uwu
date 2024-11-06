@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "~/public": ["./public/*"]
+      "~/assets/*": ["./src/assets/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

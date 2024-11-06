@@ -1,0 +1,12 @@
+<!-- <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> -->
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-49 -49 588.00 588.00" xml:space="preserve" width="256px" height="256px" fill="#000000">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.9800000000000001"/>
+
+<g id="SVGRepo_iconCarrier"> <g> <g id="XMLID_30_"> <g> <path style="fill:#fbf6ea;" d="M480,100v360H10V100H480z M430,330V145H60v185H430z"/> <polygon style="fill:#fbf6ea;" points="280,235 210,270 210,200 "/> <path style="fill:#dcc3cd;" d="M430,145v185H60V145H430z M210,270l70-35l-70-35V270z"/> <rect x="10" y="30" style="fill:#d5e3d6;" width="470" height="70"/> </g> <g> <path d="M480,20H10C4.477,20,0,24.478,0,30v430c0,5.522,4.477,10,10,10h470c5.522,0,10-4.478,10-10V30 C490,24.478,485.522,20,480,20z M470,40v50H20V40H470z M20,450V110h450v340H20z"/> <rect x="35" y="55" width="20" height="20"/> <rect x="75" y="55" width="20" height="20"/> <rect x="115" y="55" width="20" height="20"/> <path d="M430,135H60c-5.522,0-10,4.477-10,10v185c0,5.522,4.478,10,10,10h370c5.522,0,10-4.478,10-10V145 C440,139.477,435.522,135,430,135z M420,320H70V155h350V320z"/> <path d="M204.743,278.507c1.605,0.992,3.429,1.493,5.257,1.493c1.528,0,3.061-0.351,4.472-1.056l70-35 C287.86,242.25,290,238.788,290,235s-2.14-7.25-5.528-8.944l-70-35c-3.099-1.55-6.78-1.385-9.729,0.438 c-2.948,1.821-4.743,5.04-4.743,8.506v70C200,273.466,201.795,276.685,204.743,278.507z M220,216.181L257.64,235L220,253.819 V216.181z"/> <polygon points="170,370 150,370 150,385 50,385 50,405 150,405 150,420 170,420 170,405 440,405 440,385 170,385 "/> </g> </g> </g> </g>
+
+</svg>

@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import chevronRight from "~/assets/svgs/chevron-right.svg";
+import { cn } from "~/lib/tailwind";
+
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<div class={cn("flex", className)}>
+  <Image
+    src={chevronRight}
+    class="-mx-3 h-11 w-11"
+    alt="aestetic icon of 'greater than' symbols :D"
+  />
+  <Image
+    src={chevronRight}
+    class="-mx-3 h-11 w-11"
+    alt="aestetic icon of 'greater than' symbols :D"
+  />
+  <Image
+    src={chevronRight}
+    class="-mx-3 h-11 w-11"
+    alt="aestetic icon of 'greater than' symbols :D"
+  />
+  <Image
+    src={chevronRight}
+    class="-mx-3 h-11 w-11"
+    alt="aestetic icon of 'greater than' symbols :D"
+  />
+</div>

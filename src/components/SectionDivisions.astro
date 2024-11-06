@@ -1,23 +1,68 @@
 ---
+import { Image } from "astro:assets";
 import ControlBtnsGimmick from "./ControlBtnsGimmick.astro";
 import Title from "./Title.astro";
+import type { ImageMetadata } from "astro";
+// repeated images
+import DottedLine from "./atoms/DottedLine.astro";
+import ChevronRight from "./atoms/ChevronRight.astro";
 
+type IconsImgs = "chevronRight" | "dottedLine";
 type Props = {
   titleText: string;
   sectionNumber: string;
+  firstIcon: IconsImgs;
+  secondIcon: IconsImgs;
+  localImage: ImageMetadata;
 };
+// const imagesMapping: Record<IconsImgs, ImageMetadata> = {
+//   chevronRight: chevronRight,
+//   dottedLine: dottedLine,
+// };
 
-const { titleText, sectionNumber } = Astro.props;
+const { titleText, sectionNumber, firstIcon, secondIcon, localImage } =
+  Astro.props;
 ---
 
-<!-- number card container -->
-<div
-  class="bg-light-bg container mx-auto relative shadow-realistic-solid border-2 border-black mt-20 w-fit text-6xl font-bold"
->
-  <ControlBtnsGimmick className="" />
-  <p class="bg-black h-1 w-full mt-2 mb-2"></p>
-  <p class="px-3 py-2 text-center tracking-widest">{sectionNumber}</p>
+<!-- main container -->
+<div class="grid grid-cols-6 md:grid-cols-7 mt-0">
+  <!-- number card container -->
+  <div
+    class="col-span-3 md:col-span-2 bg-light-bg shadow-realistic-solid border-2 border-black w-44 text-5xl font-bold h-fit"
+  >
+    <ControlBtnsGimmick className="justify-end" />
+    <p class="bg-black h-1 w-full mt-2 mb-2"></p>
+    <p class="px-3 py-3 text-center tracking-widest">{sectionNumber}</p>
+  </div>
+  <!-- title & icons container -->
+  <div class="col-span-3 h-full">
+    <div class="flex flex-col">
+      {
+        firstIcon === "chevronRight" && (
+          <>
+            <ChevronRight className="" />
+            <DottedLine />
+          </>
+        )
+      }
+
+      {
+        firstIcon === "dottedLine" && (
+          <>
+            <DottedLine />
+            <ChevronRight className="" />
+          </>
+        )
+      }
+    </div>
+  </div>
+  <!-- image -->
+  <div class="col-span-2 hidden md:block">
+    <Image
+      src={localImage}
+      alt="random icon in a section that doesnt quite have a meaning, just looks cute :D"
+    />
+  </div>
 </div>
-<div>
-  <Title titleText={titleText} />
-</div>
+
+<Title titleText={titleText} />

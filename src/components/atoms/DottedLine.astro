@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import dot from "~/assets/svgs/dot.svg";
+import { cn } from "~/lib/tailwind";
+
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<div class={cn("flex gap-0.5", className)}>
+  <Image src={dot} class="w-3 h-3" alt="aestetic icon of a dotted line :P" />
+  <Image src={dot} class="w-3 h-3" alt="aestetic icon of a dotted line :P" />
+  <Image src={dot} class="w-3 h-3" alt="aestetic icon of a dotted line :P" />
+  <Image src={dot} class="w-3 h-3" alt="aestetic icon of a dotted line :P" />
+  <Image src={dot} class="w-3 h-3" alt="aestetic icon of a dotted line :P" />
+  <Image src={dot} class="w-3 h-3" alt="aestetic icon of a dotted line :P" />
+</div>
