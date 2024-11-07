@@ -1,0 +1,26 @@
+---
+type Props = {
+  title: string;
+  description: string;
+  techStack: string;
+  githubLink: string;
+  liveLink: string;
+};
+
+const { title, description, techStack, githubLink, liveLink } = Astro.props;
+---
+
+<div
+  class="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-realistic-solid mx-10 border-2 border-black"
+>
+  <div class="md:order-1 order-none bg-blue-200 p-4 h-24">First</div>
+  <div class="md:order-3 order-none bg-blue-300 p-4 h-24">Second</div>
+
+  <div class="md:order-2 order-none bg-green-200 p-4 h-24">Third</div>
+  <div class="md:order-4 order-none bg-green-300 p-4 h-24">Fourth</div>
+
+  <!-- Send the 5th item to the 2nd column on large screens -->
+  <div class="md:order-5 order-none lg:col-start-2 bg-green-400 p-4 h-24">
+    Fifth
+  </div>
+</div>

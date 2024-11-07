@@ -6,11 +6,13 @@ import SectionDivision from "../components/SectionDivisions.astro";
 import Title from "~/components/Title.astro";
 // import usbImage from "~/assets/usb.png";
 import usbSvg from "~/assets/svgs/usb.svg";
+import mouseSvg from "~/assets/svgs/mouse.svg";
 import mediaPlayer from "~/assets/media-player.png";
+import TextParagraph from "~/components/atoms/TextParagraph.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="px-8">
+  <main class="">
     <Title titleText="Adan Moreno" className="mt-8" />
     <p class="text-center my-4">(Ruby-dev)</p>
 
@@ -18,16 +20,34 @@ import mediaPlayer from "~/assets/media-player.png";
       Frontend Web Dev
     </p>
 
-    <p class="text-center px-8 my-10">
-      I build highly perfomant applications in nextjs, while keeping SEO & UX
-      into account, always open to new ways of improving my code & myself.
-    </p>
+    <TextParagraph
+      text="I build highly perfomant applications in nextjs, while keeping SEO & UX into account, always open to new ways of improving my code & myself."
+    />
+
     <SectionDivision
-      titleText="About me"
       sectionNumber="01"
+      titleText="About me"
+      idInnerLink="about-me"
       firstIcon="chevronRight"
-      secondIcon="dottedLine"
       localImage={usbSvg}
+    />
+
+    <TextParagraph
+      text={`I started my journey by teaching myself how to code with Python and fell
+      in love with the joy of solving complex problems. That same passion led me
+      to explore machine learning, since I've always loved math. However, I
+      struggled to stay motivated and decided that learning web development
+      would be a more efficient path, as it's a skill that can easily kickstart
+      your way into entrepreneurship, especially since everything has a webpage
+      nowadays!`}
+    />
+
+    <SectionDivision
+      sectionNumber="02"
+      titleText="My projects"
+      idInnerLink="my-projects"
+      firstIcon="dottedLine"
+      localImage={mediaPlayer}
     />
 
     <div class="block md:hidden">

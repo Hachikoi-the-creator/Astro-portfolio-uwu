@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import ControlBtnsGimmick from "./ControlBtnsGimmick.astro";
 import Title from "./Title.astro";
 import type { ImageMetadata } from "astro";
-// repeated images
 import DottedLine from "./atoms/DottedLine.astro";
 import ChevronRight from "./atoms/ChevronRight.astro";
 
@@ -12,36 +11,32 @@ type Props = {
   titleText: string;
   sectionNumber: string;
   firstIcon: IconsImgs;
-  secondIcon: IconsImgs;
   localImage: ImageMetadata;
+  idInnerLink: string;
 };
-// const imagesMapping: Record<IconsImgs, ImageMetadata> = {
-//   chevronRight: chevronRight,
-//   dottedLine: dottedLine,
-// };
 
-const { titleText, sectionNumber, firstIcon, secondIcon, localImage } =
+const { titleText, sectionNumber, firstIcon, localImage, idInnerLink } =
   Astro.props;
 ---
 
 <!-- main container -->
-<div class="grid grid-cols-6 md:grid-cols-7 mt-0">
+<div class="grid grid-cols-6 md:grid-cols-7 mb-8 md:mb-0" id={idInnerLink}>
   <!-- number card container -->
   <div
-    class="col-span-3 md:col-span-2 bg-light-bg shadow-realistic-solid border-2 border-black w-44 text-5xl font-bold h-fit"
+    class="relative -left-10 col-span-3 md:col-span-2 bg-light-bg shadow-realistic-solid border-2 border-black w-44 text-5xl font-bold h-fit"
   >
     <ControlBtnsGimmick className="justify-end" />
     <p class="bg-black h-1 w-full mt-2 mb-2"></p>
     <p class="px-3 py-3 text-center tracking-widest">{sectionNumber}</p>
   </div>
   <!-- title & icons container -->
-  <div class="col-span-3 h-full">
-    <div class="flex flex-col">
+  <div class="col-span-3 h-32 pt-6 p-4">
+    <div class="flex flex-col h-full justify-between">
       {
         firstIcon === "chevronRight" && (
           <>
             <ChevronRight className="" />
-            <DottedLine />
+            <DottedLine className="self-end" />
           </>
         )
       }
@@ -50,7 +45,7 @@ const { titleText, sectionNumber, firstIcon, secondIcon, localImage } =
         firstIcon === "dottedLine" && (
           <>
             <DottedLine />
-            <ChevronRight className="" />
+            <ChevronRight className="self-end" />
           </>
         )
       }
@@ -60,6 +55,7 @@ const { titleText, sectionNumber, firstIcon, secondIcon, localImage } =
   <div class="col-span-2 hidden md:block">
     <Image
       src={localImage}
+      class="relative -right-10 lg:-right-28 xl:-right-36 bottom-10"
       alt="random icon in a section that doesnt quite have a meaning, just looks cute :D"
     />
   </div>
