@@ -9,6 +9,8 @@ export default {
         "light-bg": "#fcf6e8",
         "dark-bg": "#dbcfc3",
         "light-purple": "#dac2cf",
+        "accent-peach": "#EFC4B9",
+        "accent-pink": "#ffc2e3",
         greenish: "#d3e3d6",
         oranji: "#fdbc96",
         redish: "#efc4b9",

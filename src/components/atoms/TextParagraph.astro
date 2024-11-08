@@ -1,9 +1,12 @@
 ---
+import { cn } from "~/lib/tailwind";
+
 type Props = {
   text: string;
+  className?: string;
 };
 
-const { text } = Astro.props;
+const { text, className } = Astro.props;
 ---
 
-<p class="text-center px-8 my-10">{text}</p>
+<p class={cn("text-center px-8", className)}>{text}</p>

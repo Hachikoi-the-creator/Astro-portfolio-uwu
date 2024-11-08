@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import musicPlayerImg from "~/assets/media-player.png";
+import LinkWithBg from "./atoms/LinkWithBg.astro";
+import UnderscoredText from "./atoms/UnderscoredText.astro";
+
+const techStack = ["React", "TailwindCSS", "Typescript"];
+---
+
+<div class="flex flex-wrap shadow-realistic-solid mx-10 border-2 border-black">
+  <!-- left section -->
+  <div class="w-1/2">
+    <div class="bg-blue-200 p-4 h-64">
+      <Image src={musicPlayerImg} alt={`image of ${"title"}`} class="" />
+    </div>
+    <div class="bg-blue-300 p-4 flex gap-4">
+      <LinkWithBg href={"#"} text="Code source" ariaLabel="github" />
+      <LinkWithBg href={"#"} text="Live preview" ariaLabel="live preview" />
+    </div>
+  </div>
+
+  <!-- right section -->
+  <div class="w-1/2">
+    <div class="bg-green-200 p-4 h-fit text-center">
+      {"title"}
+    </div>
+
+    <div class="bg-green-300 p-4 h-24 text-center">
+      {"description"}
+    </div>
+
+    <div class="lg:col-start-2 bg-green-400 p-4 h-24">
+      {techStack.map((tech) => <UnderscoredText text={tech} />)}
+    </div>
+  </div>
+</div>

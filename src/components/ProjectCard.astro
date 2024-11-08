@@ -1,26 +1,58 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import UnderscoredText from "./atoms/UnderscoredText.astro";
+import LinkWithBg from "./atoms/LinkWithBg.astro";
+
 type Props = {
+  projectImg: ImageMetadata;
   title: string;
   description: string;
-  techStack: string;
+  techStack: string[];
   githubLink: string;
   liveLink: string;
 };
 
-const { title, description, techStack, githubLink, liveLink } = Astro.props;
+const { projectImg, title, description, techStack, githubLink, liveLink } =
+  Astro.props;
 ---
 
 <div
-  class="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-realistic-solid mx-10 border-2 border-black"
+  class="flex flex-wrap flex-col lg:flex-row shadow-realistic-solid mx-10 border-2 border-black w-[90vw] relative -left-20 sm:-left-0 sm:w-11/12 sm:mx-auto bg-light-bg"
 >
-  <div class="md:order-1 order-none bg-blue-200 p-4 h-24">First</div>
-  <div class="md:order-3 order-none bg-blue-300 p-4 h-24">Second</div>
+  <!-- left section -->
+  <div class="w-full lg:w-1/2">
+    <div class="p-4">
+      <Image src={projectImg} alt={`image of ${title}`} class="" />
+    </div>
+    <div class="px-4 flex gap-4">
+      <LinkWithBg
+        href={githubLink}
+        text="Code source"
+        ariaLabel="github"
+        className="bg-accent-peach text-base"
+      />
+      <LinkWithBg
+        href={liveLink}
+        text="Live preview"
+        ariaLabel="live preview"
+        className="bg-accent-pink text-base"
+      />
+    </div>
+  </div>
 
-  <div class="md:order-2 order-none bg-green-200 p-4 h-24">Third</div>
-  <div class="md:order-4 order-none bg-green-300 p-4 h-24">Fourth</div>
+  <!-- right section -->
+  <div class="w-full lg:w-1/2 flex flex-col justify-between">
+    <div class="px-4 pt-2 text-center text-2xl font-bold">
+      {title}
+    </div>
 
-  <!-- Send the 5th item to the 2nd column on large screens -->
-  <div class="md:order-5 order-none lg:col-start-2 bg-green-400 p-4 h-24">
-    Fifth
+    <div class="p-4 text-center">
+      {description}
+    </div>
+
+    <div class="flex gap-2 justify-between p-4">
+      {techStack.map((tech) => <UnderscoredText text={tech} />)}
+    </div>
   </div>
 </div>

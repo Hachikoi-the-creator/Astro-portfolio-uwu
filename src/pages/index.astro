@@ -9,10 +9,20 @@ import usbSvg from "~/assets/svgs/usb.svg";
 import mouseSvg from "~/assets/svgs/mouse.svg";
 import mediaPlayer from "~/assets/media-player.png";
 import TextParagraph from "~/components/atoms/TextParagraph.astro";
+import ProjectCard from "~/components/ProjectCard.astro";
+// projectsImgs
+import heyhom from "~/assets/projects/heyhom.png";
+import cakeApp from "~/assets/projects/cake-app.webp";
+import fitU from "~/assets/projects/fit-u.webp";
+import TestingCard from "~/components/TestingCard.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="">
+    <!-- <div class="block md:hidden">
+      <MobileNavbar />
+    </div> -->
+
     <Title titleText="Adan Moreno" className="mt-8" />
     <p class="text-center my-4">(Ruby-dev)</p>
 
@@ -23,6 +33,7 @@ import TextParagraph from "~/components/atoms/TextParagraph.astro";
     <TextParagraph
       text="I build highly perfomant applications in nextjs, while keeping SEO & UX into account, always open to new ways of improving my code & myself."
     />
+    <br />
 
     <SectionDivision
       sectionNumber="01"
@@ -33,6 +44,7 @@ import TextParagraph from "~/components/atoms/TextParagraph.astro";
     />
 
     <TextParagraph
+      className="mt-4 mb-10"
       text={`I started my journey by teaching myself how to code with Python and fell
       in love with the joy of solving complex problems. That same passion led me
       to explore machine learning, since I've always loved math. However, I
@@ -49,9 +61,17 @@ import TextParagraph from "~/components/atoms/TextParagraph.astro";
       firstIcon="dottedLine"
       localImage={mediaPlayer}
     />
-
-    <div class="block md:hidden">
-      <MobileNavbar />
-    </div>
+    <br />
+    <ProjectCard
+      projectImg={heyhom}
+      title="Hey hom!"
+      description="Have been the only in charge of the frontend development of this project, which is a platform for renting and selling houses, made the whole rework of the page, and added 2 new tools for brokers & users, also was in charge of a team of 3 developers working remotely."
+      techStack={["AWS", "Django", "Nexjs 14", "Typescript", "TailwindCSS"]}
+      githubLink="#"
+      liveLink="#"
+    />
+    <br />
+    <!-- <TestingCard /> -->
+    <br /><br />
   </main>
 </Layout>

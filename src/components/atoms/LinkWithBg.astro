@@ -15,7 +15,7 @@ const { href, text, ariaLabel, className } = Astro.props;
 
 <a
   class={cn(
-    "bg-pink-300 rounded-lg px-2 py-1.5 font-bold text-xl flex justify-between flex-1",
+    "bg-blue-600 rounded-lg px-2 py-1.5 font-bold text-xl flex justify-between flex-1 align-middle",
     className
   )}
   href={href}
@@ -23,5 +23,9 @@ const { href, text, ariaLabel, className } = Astro.props;
   <span>
     {text}
   </span>
-  <Image src={linkSvg} class="w-3 h-3" alt={`link to goto ${ariaLabel}`} />
+  <Image
+    src={linkSvg}
+    class="w-3 h-fit my-auto text-blue-600 fill-blue-600"
+    alt={`link to goto ${ariaLabel}`}
+  />
 </a>
