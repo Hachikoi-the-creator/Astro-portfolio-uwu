@@ -14,6 +14,7 @@ export default {
         greenish: "#d3e3d6",
         oranji: "#fdbc96",
         redish: "#efc4b9",
+        warning: "#ff1d64",
       },
       boxShadow: {
         "realistic-solid": "11px 11px 0px 0px rgba(0, 0, 0, 1)", // X, Y, Blur, Spread, Color

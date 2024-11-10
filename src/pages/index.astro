@@ -1,29 +1,29 @@
 ---
-import MobileNavbar from "../components/navbar/MobileNavbar.astro";
+// import MobileNavbar from "../components/navbar/MobileNavbar.astro";
 import Layout from "../layouts/Layout.astro";
-// import ControlBtnsGimmick from "../components/ControlBtnsGimmick.astro";
 import SectionDivision from "../components/SectionDivisions.astro";
 import Title from "~/components/Title.astro";
-// import usbImage from "~/assets/usb.png";
 import usbSvg from "~/assets/svgs/usb.svg";
 import mouseSvg from "~/assets/svgs/mouse.svg";
-import mediaPlayer from "~/assets/media-player.png";
+import mediaPlayerSvg from "~/assets/svgs/video-player.svg";
 import TextParagraph from "~/components/atoms/TextParagraph.astro";
 import ProjectCard from "~/components/ProjectCard.astro";
 // projectsImgs
 import heyhom from "~/assets/projects/heyhom.png";
-import cakeApp from "~/assets/projects/cake-app.webp";
-import fitU from "~/assets/projects/fit-u.webp";
-import TestingCard from "~/components/TestingCard.astro";
+import cakeAppPng from "~/assets/projects/cake-app.png";
+import fitU from "~/assets/projects/fitu.webp";
+import IconDivisors from "~/components/atoms/IconDivisors.astro";
+// divs
+import heartSvg from "~/assets/svgs/heart.svg";
+import starSvg from "~/assets/svgs/star.svg";
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="">
-    <!-- <div class="block md:hidden">
-      <MobileNavbar />
-    </div> -->
-
-    <Title titleText="Adan Moreno" className="mt-8" />
+    <Title
+      titleText="Adan Moreno"
+      className="mt-11 pt-2 border-t-4 border-black"
+    />
     <p class="text-center my-4">(Ruby-dev)</p>
 
     <p class="text-xl md:text-2xl lg:text-3xl font-bold text-center">
@@ -44,7 +44,7 @@ import TestingCard from "~/components/TestingCard.astro";
     />
 
     <TextParagraph
-      className="mt-4 mb-10"
+      className="mt-4 mb-10 px-1.5 lg:px-4"
       text={`I started my journey by teaching myself how to code with Python and fell
       in love with the joy of solving complex problems. That same passion led me
       to explore machine learning, since I've always loved math. However, I
@@ -59,19 +59,129 @@ import TestingCard from "~/components/TestingCard.astro";
       titleText="My projects"
       idInnerLink="my-projects"
       firstIcon="dottedLine"
-      localImage={mediaPlayer}
+      localImage={mediaPlayerSvg}
     />
     <br />
     <ProjectCard
       projectImg={heyhom}
       title="Hey hom!"
       description="Have been the only in charge of the frontend development of this project, which is a platform for renting and selling houses, made the whole rework of the page, and added 2 new tools for brokers & users, also was in charge of a team of 3 developers working remotely."
-      techStack={["AWS", "Django", "Nexjs 14", "Typescript", "TailwindCSS"]}
+      techStack={[
+        "AWS",
+        "Django",
+        "Nexjs 14",
+        "Typescript",
+        "TailwindCSS",
+        "Python",
+        "Azure",
+        "Cypress",
+      ]}
       githubLink="#"
-      liveLink="#"
+      liveLink="https://www.heyhom.mx/"
     />
-    <br />
-    <!-- <TestingCard /> -->
-    <br /><br />
+
+    <IconDivisors imgSrc={starSvg} direction="left" />
+    <ProjectCard
+      projectImg={fitU}
+      title="Fit U"
+      description="This platform allows you to create personalized training and nutrition plans tailored to your specific goals—whether you're an individual looking to stay fit or a coach managing a group of trainees. Enjoy the convenience of having everything you need for your workout and diet routine right at home."
+      techStack={[
+        "Nextjs 14",
+        "TailwindCSS",
+        "Zustand",
+        "Express",
+        "Cloudinary",
+        "Firebase-auth",
+        "PostgreSQL",
+        "Sequelize",
+        "Typescript",
+      ]}
+      githubLink="https://github.com/proyecto-final-2023/PF-G6"
+      liveLink="https://final-henry-g6.netlify.app/"
+    />
+    <IconDivisors imgSrc={heartSvg} direction="right" />
+    <ProjectCard
+      projectImg={cakeAppPng}
+      title="Cake App"
+      description="Here you can take a peak at the kind of work you can expect from this Baker, was a good experience to work with Jquery since I never heard of it, who would have thought I'd make my own version of Jquery later on... The project was a good experience about do's and dont's in freelancing."
+      techStack={["Html", "SASS", "JQuery", "Javascript"]}
+      githubLink="https://github.com/Hachikoi-the-creator/new-client"
+      liveLink="https://pro-por.netlify.app/"
+    />
   </main>
+  <br /><br />
+  <!-- toast provider? -->
+  <div
+    id="toast"
+    class="fixed bottom-4 right-4 hidden px-4 py-2 bg-warning transition-all duration-300 translate-y-full opacity-0 shadow-realistic-solid font-bold"
+  >
+    <span id="toast-message">Default message</span>
+  </div>
 </Layout>
+
+<script>
+  interface ToastOptions {
+    duration?: number;
+    type?: "success" | "error" | "warning" | "info";
+  }
+
+  class Toast {
+    private toastElement: HTMLElement;
+    private messageElement: HTMLElement;
+    private timeoutId: number | null;
+
+    constructor() {
+      const toastEl = document.getElementById("toast");
+      const messageEl = document.getElementById("toast-message");
+
+      if (!toastEl || !messageEl) {
+        throw new Error("Toast elements not found");
+      }
+
+      this.toastElement = toastEl;
+      this.messageElement = messageEl;
+      this.timeoutId = null;
+    }
+
+    show(message: string, options: ToastOptions = {}): void {
+      const { duration = 3000 } = options;
+
+      // Clear any existing timeout
+      if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+      }
+
+      // Update message
+      this.messageElement.textContent = message;
+
+      // Show toast
+      this.toastElement.classList.remove("hidden");
+      // Use setTimeout to ensure the transition works
+      setTimeout(() => {
+        this.toastElement.classList.remove("translate-y-full", "opacity-0");
+      }, 10);
+
+      // Hide after duration
+      this.timeoutId = window.setTimeout(() => {
+        this.hide();
+      }, duration);
+    }
+
+    private hide(): void {
+      this.toastElement.classList.add("translate-y-full", "opacity-0");
+      setTimeout(() => {
+        this.toastElement.classList.add("hidden");
+      }, 300); // Match this with your transition duration
+    }
+  }
+
+  // Declare type for window augmentation
+  declare global {
+    interface Window {
+      toast: Toast;
+    }
+  }
+
+  // Make toast available globally
+  window.toast = new Toast();
+</script>

@@ -5,21 +5,20 @@ import linkDiaSvg from "~/assets/svgs/link-dia.svg";
 import linkSvg from "~/assets/svgs/link.svg";
 
 type Props = {
-  href: string;
   text: string;
   ariaLabel: string;
   className?: string;
 };
 
-const { href, text, ariaLabel, className } = Astro.props;
+const { text, ariaLabel, className } = Astro.props;
 ---
 
-<a
+<button
   class={cn(
     "rounded-lg px-2 py-1.5 font-bold text-xl flex justify-center gap-4 flex-1 align-middle",
     className
   )}
-  href={href}
+  onclick="toast.show('OFC is not public, you silly goose~')"
 >
   <span>
     {text}
@@ -30,4 +29,4 @@ const { href, text, ariaLabel, className } = Astro.props;
     class="w-6 h-fit my-auto"
     alt={`link to goto ${ariaLabel}`}
   />
-</a>
+</button>

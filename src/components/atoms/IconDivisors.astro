@@ -1,0 +1,21 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { cn } from "~/lib/tailwind";
+
+type Props = {
+  imgSrc: ImageMetadata;
+  direction: "left" | "right";
+  className?: string;
+};
+
+const { imgSrc, direction, className } = Astro.props;
+---
+
+<div class={cn("my-4 px-16", className)}>
+  <Image
+    src={imgSrc}
+    class={`w-14 h-w-14 my-auto ${direction === "left" ? "mr-auto" : "ml-auto"}`}
+    alt={`lil cute icon as div`}
+  />
+</div>

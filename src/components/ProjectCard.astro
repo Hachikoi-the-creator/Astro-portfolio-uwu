@@ -3,6 +3,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import UnderscoredText from "./atoms/UnderscoredText.astro";
 import LinkWithBg from "./atoms/LinkWithBg.astro";
+import PrivateRepoLInk from "./atoms/PrivateRepoLink.astro";
 
 type Props = {
   projectImg: ImageMetadata;
@@ -18,40 +19,54 @@ const { projectImg, title, description, techStack, githubLink, liveLink } =
 ---
 
 <div
-  class="flex flex-wrap flex-col lg:flex-row shadow-realistic-solid mx-10 border-2 border-black w-[90vw] relative -left-20 sm:-left-0 sm:w-11/12 sm:mx-auto bg-light-bg"
+  class="flex flex-wrap flex-col lg:flex-row shadow-realistic-solid mx-10 border-2 border-black w-[90vw] relative -left-20 sm:-left-0 sm:w-11/12 sm:mx-auto bg-light-bg p-2 lg:p-6"
 >
   <!-- left section -->
-  <div class="w-full lg:w-1/2">
-    <div class="p-4">
-      <Image src={projectImg} alt={`image of ${title}`} class="" />
-    </div>
-    <div class="px-4 flex gap-4">
-      <LinkWithBg
-        href={githubLink}
-        text="Code source"
-        ariaLabel="github"
-        className="bg-accent-peach text-base"
-      />
+  <div class="w-full lg:w-1/2 flex flex-col justify-between gap-4 lg:gap-2">
+    <Image
+      src={projectImg}
+      alt={`image of ${title}`}
+      class="rounded-md shadow-md object-cover"
+    />
+    <div class="flex gap-4">
+      {
+        githubLink === "#" ? (
+          <PrivateRepoLInk
+            text="Code source"
+            ariaLabel="github"
+            className="bg-accent-peach text-base shadow-md"
+          />
+        ) : (
+          <LinkWithBg
+            href={githubLink}
+            text="Code source"
+            ariaLabel="github"
+            className="bg-accent-peach text-base shadow-md"
+          />
+        )
+      }
       <LinkWithBg
         href={liveLink}
         text="Live preview"
         ariaLabel="live preview"
-        className="bg-accent-pink text-base"
+        className="bg-accent-pink text-base shadow-md"
       />
     </div>
   </div>
 
   <!-- right section -->
-  <div class="w-full lg:w-1/2 flex flex-col justify-between">
-    <div class="px-4 pt-2 text-center text-2xl font-bold">
+  <div
+    class="gap-4 pt-5 lg:pt-0 lg:gap-1 w-full lg:w-1/2 flex flex-col justify-between"
+  >
+    <div class="pl-4 text-center text-2xl font-bold">
       {title}
     </div>
 
-    <div class="p-4 text-center">
+    <div class="pl-4 text-center">
       {description}
     </div>
 
-    <div class="flex gap-2 justify-between p-4">
+    <div class="pl-4 flex gap-4 justify-center flex-wrap">
       {techStack.map((tech) => <UnderscoredText text={tech} />)}
     </div>
   </div>
